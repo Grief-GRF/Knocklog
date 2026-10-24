@@ -3,5 +3,5 @@ description: 记下每一次发生，回看生活的节奏。
 lang: zh-CN
 theme: jekyll-theme-minimal
 url: https://grief-grf.github.io
-baseurl: /knocklog
+baseurl: /Knocklog
 show_downloads: false
