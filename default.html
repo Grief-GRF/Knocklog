@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'zh-CN' }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#F0F7FC">
+  <title>{{ page.title | default: site.title | escape }}</title>
+  <meta name="description" content="{{ site.description | escape }}">
+  <link rel="canonical" href="{{ page.url | absolute_url }}">
+  <link rel="icon" type="image/png" href="{{ '/assets/app-icon.png' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/knocklog.css' | relative_url }}">
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到正文</a>
+  <header class="site-header">
+    <a class="brand" href="{{ '/' | relative_url }}" aria-label="叩迹首页">
+      <img src="{{ '/assets/app-icon.png' | relative_url }}" width="42" height="42" alt="">
+      <span>叩迹<small>Knocklog</small></span>
+    </a>
+    <nav aria-label="主要导航">
+      <a href="{{ '/' | relative_url }}"{% if page.url == '/' %} aria-current="page"{% endif %}>首页</a>
+      <a href="{{ '/privacy.html' | relative_url }}"{% if page.url == '/privacy.html' %} aria-current="page"{% endif %}>隐私政策</a>
+      <a href="mailto:aojiaoshou@yahoo.com">联系开发者<span aria-hidden="true"> ↗</span></a>
+    </nav>
+  </header>
+  <main id="main" class="page{% if page.url == '/' %} home{% else %} document{% endif %}">
+    {% if page.url == '/' %}
+    <img class="hero-icon" src="{{ '/assets/app-icon.png' | relative_url }}" width="164" height="164" alt="叩迹应用图标">
+    {% else %}
+    <p class="page-label">隐私与数据</p>
+    {% endif %}
+    <article class="content">{{ content }}</article>
+  </main>
+  <footer class="site-footer">
+    <span>叩迹 · Knocklog</span>
+    <a href="{{ '/privacy.html' | relative_url }}">隐私政策</a>
+    <a href="mailto:aojiaoshou@yahoo.com">aojiaoshou@yahoo.com</a>
+  </footer>
+</body>
+</html>
